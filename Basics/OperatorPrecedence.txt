@@ -1,0 +1,61 @@
+Bitwise Operators:
+Bitwise & (AND)
+Bitwise | (OR)
+Bitwise ^ (XOR)
+
+XOR -> same=0, different=1
+
+Bitwise << (Left Shift)
+                    // ans = a*2^b 
+    (n<<i) ==> (4<<1)           (10<<2)                        
+    1 0 0 0 = 4                 1 0 1 0 = 10
+   1 0 0 0 0= 8                1 0 1 0 0 = 40
+
+Bitwise >> (Right Shift)
+                        // ans a/2^b
+    (n>>i) ==> (10>>1)              (8>>2)
+    1 0 1 0 = 10                    1 0 0  = 8
+    0 1 0 1 = 5                     0 1 0 -> First Shift
+                                    0 1 0 -> Second Shift = 2
+
+One's Complement: (~)
+Two's Complement:
+1. Convert to Binary Form
+2. Prefix with a 0
+3. 1's Complement 1->0, 0->1
+4. Add +1
+
+Operators          Precedence
+!, +, -              R -> L
+*, /, %              L -> R
++, -                 L -> R
+<,<=,>=,>            L -> R
+==, !=               L -> R
+&&                   L -> R
+||                   L -> R
+= (assign)           R -> L
+
+
+Operators:
+1. Assignment (=, +=, -=, *=, /=)
+2. Relational (<,<=,>=,>,==,!=)
+3. Tertiary/Conditional (Expression1 ? Expression2 : Expression3)
+4. Logical (&&, ||, !)
+5. Bitwise (AND, OR, XOR, <<, >>, ~)
+6. Arithmetic (+,-,*,/,%,++,--)
+
+Time Complexity: Different operating system has different time Complexity
+NOT the actual time taken but amount of time taken as function of input size (n).
+                  I/O ~ T.C   
+                  Constant T.C = O(1)
+Space Complexity: Amount of space taken by an algorithm as function of input size (n).
+                  Constant SC = O(k)=O(1)
+
+O(1) -> Best
+O(logn) -> Logarithamic
+O(n) -> Linear
+O(nlogn) -> Linear*Logarithamic
+O(n^2) -> Square
+O(n^3) -> Cubic
+O(2^x) -> Exponential
+O(n!) -> Factorial  (Worst)
