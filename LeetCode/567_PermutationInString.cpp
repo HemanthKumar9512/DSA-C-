@@ -37,10 +37,10 @@ bool checkInclusion(string s1, string s2){   //O(n^2)
             idx++;
         }
         if(isFreqSame(freq,windfreq)){
-            return true;   // Found
+            return true;   // Same permutations are Found
         }
     }
-    return false;   // Not Found
+    return false;   // Not same permutations are Found
 }
 
 int main(){
