@@ -60,7 +60,7 @@ vector<int> Optimized(vector<int>& nums, int target) {
     }
 
     return {};
-}
+}   
     
 int main(){
     vector<int> nums={5,3,2,4};
