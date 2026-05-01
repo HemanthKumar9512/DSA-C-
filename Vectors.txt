@@ -1,0 +1,33 @@
+Dynamic no fixed size.
+
+#include<vector>
+#include<bits/c++.h>   //Includes all library, but avoid using it in exams
+
+Decleration:
+vector<int> vec;
+vector<int> vec={1,2,3};
+vector<int> vec(3,0);    3= size of vector, 0=index value
+vector<char> vec={'a', 'b', 'c'};
+
+for(char val:vec){
+    cout<<val<<endl;
+}
+
+Vector Functions:
+size -> vec.size();
+push_back -> vec.push_back(25);
+pop_back -> vec.pop_back(2);
+front -> vec.front() //front-value will be printed
+at -> vec.at(1) // Value at the given index will be printed
+
+
+Static Allocation: Memory is allocated during compile time    #stack memory
+Dynamic Allocation: Memory is allocated during run time        #heap memory
+
+For every push inside the vector the size of it will be doubled
+vec.size() = 0 //Initially      vec={}
+vec.push_back(0)   //size=1     vec={0}
+vec.push_back(1)   //size=2     vec={0, 1}
+vec.push_back(2)   //size=4     vec={0,1,2,_}
+vec.push_back(3)   //size=4     vec={0,1,2,3}
+vec.push_back(4)   //size=8     vec={0,1,2,3,4,_,_,_}
