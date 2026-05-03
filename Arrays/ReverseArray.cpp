@@ -1,4 +1,4 @@
-#include<iostream>
+#include<iostream>  
 using namespace std;
 //Two-Pointer Approach
 int main(){
