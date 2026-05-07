@@ -9,7 +9,7 @@ int** ptr2=&ptr    // ptr2 is an another variable that stores the address of the
 
 int a=10; // a=10, Address=100
 int* ptr=&a;   // ptr=100, Address=200
-int** ptr2=&ptr;   //ptr2=200, Address=300
+int** ptr2=&ptr;   //ptr2=200, Address=300     
 
 Null Pointer: Doesn't point any location
 int* ptr= NULL     -> Can't be dereferenced
