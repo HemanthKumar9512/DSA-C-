@@ -1,0 +1,79 @@
+& -> Address of Operator
+// Address will be in Heaxa-decimal format.
+Pointers: Variable that stores address of the other variables.
+int a;
+int* ptr=&a;   // ptr is an variable that stores address of the variable a
+
+Pointer to Pointer:
+int** ptr2=&ptr    // ptr2 is an another variable that stores the address of the pointer variable ptr
+
+int a=10; // a=10, Address=100
+int* ptr=&a;   // ptr=100, Address=200
+int** ptr2=&ptr;   //ptr2=200, Address=300
+
+Null Pointer: Doesn't point any location
+int* ptr= NULL     -> Can't be dereferenced
+
+Dereference Operator: Determines values at that address
+*(a) =>10;
+*(ptr) => 10; // Value at address 100
+**(ptr2)=>100  // Value present at address 200
+*(ptr2) => 300  // Address of ptr2
+
+Pass by Value: Copy of argument is passed to the function
+int sum(int a, int b){
+    a+=10;
+    b+=15;
+    return a+b;
+}
+int main(){
+    int a=5, b=4;
+    sum(a,b);
+    return 0;
+}
+
+Pass by Reference (Address): Changes in original don't makes a Copy
+   1. Pointer                            2. Reference (alias)
+   void changeA(int* ptr){               void changeA(int &b){
+        *ptr=20;                                b=20;
+   }                                      } 
+   int main(){                            int main(){
+        int a=10;                               int a=100;
+        changeA(a);  //20                       changeA(a);  //20
+   }                                      }
+
+
+   Array Pointers:
+   int arr[]={1,2,3};  ==> Constant Pointer
+   cout<<arr;          ==> Can't Change Throughout
+   cout<<*arr          ==> 1 // arr[0]
+
+   Pointer Arithmetic:
+   int a=10;  Address=100
+   int* ptr=&a;                             cout<ptr;  // 0x468
+   ptr++;  100  104 108 112 .....           ptr++;
+   ptr--;  100  96  92  88  .....           cout<<ptr;  // 0x46c
+
+   int arr[]={1,2,3}
+   cout<<*arr;        //1                   ptr1 - ptr2 => No. of blocks of type (int) 
+   cout<<*(arr+1);   //2                    108 - 100 => 8 bytes
+   cout<<*(arr+2);   //3                    2 int (8 bytes) available
+
+   Subtract Ptr:
+   In C++ adding two pointer is not allowed, we can subtract if both are same type.
+
+   Compare ptr:
+   (ptr1<ptr2)  // If yes returns 1, else 0
+
+   int arr[]={10,20,30,40};
+   int* ptr = arr;    // 10
+   cout<<*(ptr+1);    // 20
+   cout<<*(ptr+3);    // 40
+   ptr++;             // 20
+   cout<<*ptr;        // 20
+
+
+
+
+
+

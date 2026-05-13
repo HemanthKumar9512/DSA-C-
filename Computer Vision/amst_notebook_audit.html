@@ -1,0 +1,298 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);background:transparent;color:var(--color-text-primary)}
+.wrap{padding:16px 0;max-width:860px}
+.header{border-bottom:2px solid var(--color-border-primary);padding-bottom:14px;margin-bottom:20px}
+.header h1{font-size:18px;font-weight:500;color:var(--color-text-primary)}
+.header p{font-size:13px;color:var(--color-text-secondary);margin-top:4px}
+.stat-row{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.stat{border-radius:10px;padding:12px 18px;flex:1;min-width:120px;text-align:center}
+.stat .num{font-size:26px;font-weight:500}
+.stat .lbl{font-size:11px;margin-top:2px}
+.s-crit{background:#FCEBEB;color:#A32D2D}.s-crit .num{color:#A32D2D}
+.s-major{background:#FAEEDA;color:#854F0B}.s-major .num{color:#854F0B}
+.s-minor{background:#EAF3DE;color:#3B6D11}.s-minor .num{color:#3B6D11}
+.s-ok{background:#E1F5EE;color:#0F6E56}.s-ok .num{color:#0F6E56}
+.section{margin-bottom:22px}
+.sec-title{font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--color-text-secondary);text-transform:uppercase;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid var(--color-border-tertiary)}
+.card{border-radius:10px;border:1px solid var(--color-border-tertiary);margin-bottom:10px;overflow:hidden}
+.card-head{display:flex;align-items:flex-start;gap:10px;padding:12px 14px;cursor:pointer;user-select:none}
+.card-head:hover{background:var(--color-background-secondary)}
+.badge{font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px;white-space:nowrap;margin-top:1px;flex-shrink:0}
+.b-crit{background:#FCEBEB;color:#A32D2D}
+.b-major{background:#FAEEDA;color:#854F0B}
+.b-minor{background:#EAF3DE;color:#3B6D11}
+.b-info{background:#E6F1FB;color:#185FA5}
+.card-title{font-size:14px;font-weight:500;flex:1;color:var(--color-text-primary)}
+.card-cell{font-size:11px;color:var(--color-text-secondary);flex-shrink:0;margin-top:2px;font-family:var(--font-mono)}
+.chevron{font-size:12px;color:var(--color-text-tertiary);flex-shrink:0;transition:transform .2s;margin-top:2px}
+.card-body{padding:0 14px 14px;display:none;border-top:1px solid var(--color-border-tertiary)}
+.card-body.open{display:block}
+.detail-row{display:flex;gap:6px;margin-top:10px;font-size:13px}
+.detail-label{font-size:11px;font-weight:500;color:var(--color-text-secondary);min-width:90px;flex-shrink:0;margin-top:1px}
+.detail-val{color:var(--color-text-primary);line-height:1.6}
+code{font-family:var(--font-mono);font-size:11px;background:var(--color-background-secondary);padding:1px 5px;border-radius:4px;color:var(--color-text-secondary)}
+.fix-box{margin-top:10px;background:var(--color-background-secondary);border-radius:8px;padding:10px 12px;border-left:3px solid #1D9E75}
+.fix-box .fix-label{font-size:10px;font-weight:500;color:#0F6E56;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.fix-box p{font-size:12px;line-height:1.6;color:var(--color-text-secondary)}
+.verdict{margin-top:20px;border-radius:10px;padding:14px 16px;background:#FCEBEB;border:1px solid #F7C1C1}
+.verdict h3{font-size:13px;font-weight:500;color:#A32D2D;margin-bottom:6px}
+.verdict p{font-size:12px;color:#791F1F;line-height:1.6}
+.ok-box{margin-top:16px;border-radius:10px;padding:14px 16px;background:#E1F5EE;border:1px solid #9FE1CB}
+.ok-box h3{font-size:13px;font-weight:500;color:#0F6E56;margin-bottom:6px}
+.ok-box ul{font-size:12px;color:#085041;padding-left:16px;line-height:1.8}
+</style>
+<div class="wrap">
+<div class="header">
+  <h1>AMST Notebook — Full Academic Audit Report</h1>
+  <p>File: AMST_Shape_Descriptor_Fixed__2_.ipynb &nbsp;|&nbsp; 43 cells &nbsp;|&nbsp; 10 figures &nbsp;|&nbsp; Swedish Leaf Dataset &nbsp;|&nbsp; Strict review for international journal submission</p>
+</div>
+
+<div class="stat-row">
+  <div class="stat s-crit"><div class="num">6</div><div class="lbl">Critical — desk reject risk</div></div>
+  <div class="stat s-major"><div class="num">5</div><div class="lbl">Major — require correction</div></div>
+  <div class="stat s-minor"><div class="num">4</div><div class="lbl">Minor — require clarification</div></div>
+  <div class="stat s-ok"><div class="num">4</div><div class="lbl">Confirmed correct</div></div>
+</div>
+
+<div class="section">
+<div class="sec-title">⛔ Critical Issues — Will Cause Desk Rejection or Reviewer Rejection</div>
+
+<div class="card" id="c1">
+<div class="card-head" onclick="tog('c1')">
+  <span class="badge b-crit">CRITICAL 1</span>
+  <span class="card-title">Live Kaggle API Key hardcoded in Cell 5</span>
+  <span class="card-cell">Cell 05</span>
+  <span class="chevron" id="c1ch">▼</span>
+</div>
+<div class="card-body" id="c1b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">A real, active Kaggle API key (<code>KGAT_8e498a7838061970cfc1e98df0dca769</code>) and username (<code>venki9512</code>) are hardcoded in plain text in Cell 5. Any reviewer, editor, or GitHub user who opens this notebook can immediately steal and abuse your credentials.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">Journals that publish supplementary notebooks (Nature, IEEE, Pattern Recognition) will reject or retract the submission for security reasons. Kaggle's Terms of Service prohibit sharing API keys. Your account can be hijacked the moment this file is shared.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Replace the hardcoded values with placeholder strings: <code>KAGGLE_USERNAME = "YOUR_USERNAME_HERE"</code> and <code>KAGGLE_API_KEY = "YOUR_API_KEY_HERE"</code>. Immediately revoke the exposed key at kaggle.com/settings → API → Revoke Token. Add a markdown cell instructing reviewers how to create their own key.</p></div>
+</div>
+</div>
+
+<div class="card" id="c2">
+<div class="card-head" onclick="tog('c2')">
+  <span class="badge b-crit">CRITICAL 2</span>
+  <span class="card-title">Ripser is imported but NEVER used — topology computed by a different algorithm</span>
+  <span class="card-cell">Cell 03, 16</span>
+  <span class="chevron" id="c2ch">▼</span>
+</div>
+<div class="card-body" id="c2b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">Cell 3 imports Ripser with a try/except fallback and sets <code>RIPSER_AVAILABLE = True/False</code>. Cell 16's <code>topological_persistence_features()</code> — which computes ALL topology used in classification — contains a custom union-find algorithm and never checks <code>RIPSER_AVAILABLE</code> or calls <code>ripser()</code> at any point. The Ripser library is completely unused in the actual descriptor pipeline.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">Your paper claims "Vietoris–Rips persistent homology computed via Ripser (Bauer, 2021)" as a core novel contribution. The actual code runs a hand-coded union-find on a 1D curvature signal. These are fundamentally different algorithms. Reviewer replication will immediately expose this discrepancy. This is a methodological misrepresentation that could be characterised as academic misconduct.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Replace the union-find code in <code>topological_persistence_features()</code> with actual Ripser: compute the time-delay embedding of κ(t), call <code>result = ripser(X_kappa, maxdim=1)</code>, then extract lifetimes from <code>result['dgms'][0]</code> and <code>result['dgms'][1]</code>. This is what the paper describes and what reviewers will check.</p></div>
+</div>
+</div>
+
+<div class="card" id="c3">
+<div class="card-head" onclick="tog('c3')">
+  <span class="badge b-crit">CRITICAL 3</span>
+  <span class="card-title">Duplicate topology function — figures show different algorithm than classification uses</span>
+  <span class="card-cell">Cell 16 vs Cell 26</span>
+  <span class="chevron" id="c3ch">▼</span>
+</div>
+<div class="card-body" id="c3b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">There are two completely separate implementations: <code>topological_persistence_features()</code> in Cell 16 (used for actual descriptor/classification) and <code>persistence_pairs()</code> in Cell 26 (used only for Figure 4). Both claim to compute persistent homology but use different code paths, different curvature normalisation, and different output formats. Figure 4 shows persistence diagrams from a different algorithm than what drives the reported accuracy numbers.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">The persistence diagrams shown in Figure 4 do not represent the topology features that produce your results. A reviewer who tries to connect Figure 4 to the reported descriptor behaviour will find they are inconsistent. This undermines the scientific integrity of the figure. IEEE TPAMI and Pattern Recognition reviewers will check this.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Delete <code>persistence_pairs()</code> entirely. Figure 4 must be regenerated using the same <code>topological_persistence_features()</code> function (or the corrected Ripser version) that produces the actual descriptor. One algorithm, one function, used consistently everywhere.</p></div>
+</div>
+</div>
+
+<div class="card" id="c4">
+<div class="card-head" onclick="tog('c4')">
+  <span class="badge b-crit">CRITICAL 4</span>
+  <span class="card-title">Confusion matrix (Fig 3) uses a single 70/30 split — inconsistent with 5-fold CV results</span>
+  <span class="card-cell">Cell 24</span>
+  <span class="chevron" id="c4ch">▼</span>
+</div>
+<div class="card-body" id="c4b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">Cell 24 computes the confusion matrix using <code>train_test_split(..., test_size=0.3, random_state=42)</code> — a single split with a specific random seed. The main results table in Cell 20 uses 5-fold stratified cross-validation. The accuracy printed on Figure 3's title will differ from the accuracy in Table 1, and neither is reproducible under a different seed.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">A reviewer will immediately notice the accuracy % on the confusion matrix does not match the 5-fold CV accuracy in the table. This is a standard red flag for cherry-picked results. All evaluation must use the same consistent protocol. Pattern Recognition, IEEE TIP, and IJCV explicitly require this.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Aggregate the confusion matrix across all five CV folds: for each fold in <code>StratifiedKFold</code>, collect <code>(y_test, y_pred)</code> pairs, concatenate them, and call <code>confusion_matrix(all_y_true, all_y_pred)</code> once. The resulting accuracy will exactly match the reported 5-fold mean accuracy.</p></div>
+</div>
+</div>
+
+<div class="card" id="c5">
+<div class="card-head" onclick="tog('c5')">
+  <span class="badge b-crit">CRITICAL 5</span>
+  <span class="card-title">Sparse Frequency Attention is a supervised Fisher criterion — misrepresented as an attention mechanism</span>
+  <span class="card-cell">Cell 16</span>
+  <span class="chevron" id="c5ch">▼</span>
+</div>
+<div class="card-body" id="c5b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val"><code>SparseFrequencyAttention.fit()</code> computes the Fisher Linear Discriminant ratio: for each band, it calculates between-class scatter (SB) divided by within-class scatter (SW), then takes softmax. This is a classic supervised filter-based feature selection method. It requires class labels <code>y</code> at fit time. A true attention mechanism (as cited — Vaswani et al. 2017) computes query-key-value interactions in descriptor space without direct class label supervision.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">The novelty claim C4 states "a sparse frequency attention mechanism inspired by transformers." Any reviewer familiar with attention mechanisms or Fisher criterion will immediately recognise this misclassification. It also introduces a subtle data leakage risk: the Fisher weights are computed on the full dataset before CV splits in Cell 18, meaning test-set class information influences the weighting applied to test features.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Either: (A) Rename it honestly to "Fisher-criterion band weighting" or "supervised spectral band selection" throughout code, paper, and figures — this is a legitimate contribution, just not an attention mechanism; or (B) Implement true attention: compute query/key vectors per sample in descriptor space and derive weights without direct class labels. Additionally, move the <code>sfa.fit()</code> call inside each CV fold using only training data to eliminate data leakage.</p></div>
+</div>
+</div>
+
+<div class="card" id="c6">
+<div class="card-head" onclick="tog('c6')">
+  <span class="badge b-crit">CRITICAL 6</span>
+  <span class="card-title">No statistical significance testing anywhere in the notebook</span>
+  <span class="card-cell">Cell 20, 38, 40</span>
+  <span class="chevron" id="c6ch">▼</span>
+</div>
+<div class="card-body" id="c6b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">Results are reported as mean ± std across 5 folds, but no statistical significance test (paired t-test, Wilcoxon signed-rank, McNemar's test, or any other) is computed anywhere. The claim "AMST significantly outperforms all baselines" cannot be scientifically substantiated with means and standard deviations alone.</span></div>
+  <div class="detail-row"><span class="detail-label">Why critical</span><span class="detail-val">IEEE TPAMI, Pattern Recognition, and IJCV all require statistical validation for performance comparisons. Without p-values, a reviewer will write "the authors have not demonstrated statistical significance of the claimed improvements" — a standard rejection reason. With only 5 folds, variance is high and differences that look meaningful may not be.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>After collecting per-fold accuracies for all methods, run <code>scipy.stats.ttest_rel(amst_fold_accs, baseline_fold_accs)</code> for each baseline pair. Report t-statistic and p-value. Mark improvements as significant only where p &lt; 0.05. Add a results table column for p-values. For the ablation study, use the same paired t-test between adjacent configurations.</p></div>
+</div>
+</div>
+
+</div>
+
+<div class="section">
+<div class="sec-title">⚠️ Major Issues — Must Be Corrected Before Submission</div>
+
+<div class="card" id="m1">
+<div class="card-head" onclick="tog('m1')">
+  <span class="badge b-major">MAJOR 1</span>
+  <span class="card-title">Retrieval PR curves use random 60-query subset, not all 1125 images</span>
+  <span class="card-cell">Cell 34</span>
+  <span class="chevron" id="m1ch">▼</span>
+</div>
+<div class="card-body" id="m1b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val"><code>retrieval_pr(X, y, n_query=60)</code> uses <code>np.random.choice(N, size=min(N,60))</code> to randomly select 60 query images. The standard KIMIA-216 and Swedish Leaf retrieval protocols require ALL images to serve as queries (leave-one-out). With 60 random queries from 1125 images, results are highly seed-dependent even with <code>np.random.seed(42)</code>, because the MAP varies by which 60 happen to be selected.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Remove the random sampling: iterate over all N images as queries. Replace <code>qidx = np.random.choice(N, ...);</code> with <code>qidx = np.arange(N)</code>. This makes Figure 8 fully deterministic and comparable to published retrieval benchmarks.</p></div>
+</div>
+</div>
+
+<div class="card" id="m2">
+<div class="card-head" onclick="tog('m2')">
+  <span class="badge b-major">MAJOR 2</span>
+  <span class="card-title">Occlusion model removes boundary points — not standard image occlusion</span>
+  <span class="card-cell">Cell 32</span>
+  <span class="chevron" id="m2ch">▼</span>
+</div>
+<div class="card-body" id="m2b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val"><code>occ_cnt(cnt, frac)</code> removes a sequential arc of boundary points (e.g. removing 30% of the contour chain starting at a random index). Standard occlusion experiments in the shape literature (Belongie 2002, Ling & Jacobs 2007) occlude the binary image by masking a spatial region (rectangle or sector), then re-extract the contour. Arc-removal and spatial-masking produce fundamentally different degradation patterns — arc-removal is not cited or validated in any benchmark.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Implement standard image-level occlusion: apply a rectangular mask of area <code>frac × img_area</code> to the binary image (e.g., zero out the central square), then re-run the full contour extraction pipeline on the occluded binary. This matches established protocols and makes Figure 7 directly comparable to published results.</p></div>
+</div>
+</div>
+
+<div class="card" id="m3">
+<div class="card-head" onclick="tog('m3')">
+  <span class="badge b-major">MAJOR 3</span>
+  <span class="card-title">SPD manifold encodes geometric features — not spectral inter-frequency covariance as claimed</span>
+  <span class="card-cell">Cell 16</span>
+  <span class="chevron" id="m3ch">▼</span>
+</div>
+<div class="card-body" id="m3b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val"><code>spd_manifold_features()</code> builds a 7-column feature matrix from: <code>[x, y_c, r, cos(θ), sin(θ), κ, arc_speed]</code> — all geometric/spatial quantities. The paper claims "SPD matrix encodes inter-frequency covariance between Fourier harmonics and wavelet sub-band energies." The code does the opposite: it computes covariance between spatial contour features, not spectral features. The paper's C3 description and the code's C3 implementation describe completely different things.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Either (A) update the SPD to take the PCFW spectral features as input — construct the covariance matrix from the Fourier magnitudes and wavelet energies as the paper claims; or (B) correct the paper text to accurately describe what the SPD actually encodes (geometric covariance). Option A is more novel and consistent with the C3 theoretical justification.</p></div>
+</div>
+</div>
+
+<div class="card" id="m4">
+<div class="card-head" onclick="tog('m4')">
+  <span class="badge b-major">MAJOR 4</span>
+  <span class="card-title">Data leakage: Fisher attention weights fitted on full dataset before CV splits</span>
+  <span class="card-cell">Cell 18</span>
+  <span class="chevron" id="m4ch">▼</span>
+</div>
+<div class="card-body" id="m4b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">In Cell 18, <code>sfa.fit(X_amst_clean, y)</code> is called on the complete dataset (all 1125 samples, all labels). <code>X_amst_attended</code> — the feature matrix with Fisher weights applied — is then used as input to the 5-fold CV in Cell 20. This means test-fold samples have already influenced the attention weights through their class labels. The test set is contaminated.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Move <code>sfa = SparseFrequencyAttention(...)</code> and <code>sfa.fit(X_train, y_train)</code> inside the CV loop, after each train/test split. Apply <code>sfa.transform()</code> separately to <code>X_train</code> and <code>X_test</code>. This guarantees no test-set leakage and makes reported accuracy valid.</p></div>
+</div>
+</div>
+
+<div class="card" id="m5">
+<div class="card-head" onclick="tog('m5')">
+  <span class="badge b-major">MAJOR 5</span>
+  <span class="card-title">Wavelet baseline and AMST wavelet use different pre-processing — comparison is not controlled</span>
+  <span class="card-cell">Cell 14 vs Cell 16</span>
+  <span class="chevron" id="m5ch">▼</span>
+</div>
+<div class="card-body" id="m5b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">The baseline <code>wavelet_descriptor()</code> operates on the raw radial distance signal <code>r</code> with fixed level=5 and returns full energy spectrum. AMST's PCFW operates on <code>r - mean(r)</code> (mean-subtracted), uses adaptive level selection based on dominant frequency, and truncates to <code>wlen=8</code> bands. These are three separate methodological differences. The AMST wavelet component is therefore not a fair isolated comparison against the wavelet baseline.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Standardise pre-processing: both baseline and AMST wavelet should operate on the same input signal (either both <code>r</code> or both <code>r-mean(r)</code>). Document exactly which aspects of PCFW are novel versus which are standard wavelet choices. The ablation study (Fig 10 panel F) should include a "standard wavelet at adaptive level" configuration to isolate the phase-coherence contribution specifically.</p></div>
+</div>
+</div>
+
+</div>
+
+<div class="section">
+<div class="sec-title">📋 Minor Issues — Require Clarification or Small Fixes</div>
+
+<div class="card" id="mn1">
+<div class="card-head" onclick="tog('mn1')">
+  <span class="badge b-minor">MINOR 1</span>
+  <span class="card-title">Noise sigma values are in normalised coordinates — axis label is misleading</span>
+  <span class="card-cell">Cell 30</span>
+  <span class="chevron" id="mn1ch">▼</span>
+</div>
+<div class="card-body" id="mn1b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">Noise is added as <code>np.random.normal(0, sigma, cnt.shape)</code> where <code>cnt</code> is a normalised contour in the unit disk [−1, 1]. The sigma values (0.01 to 0.25) are in these normalised units. The x-axis label says "Gaussian Noise σ" — a reader will assume pixel units. σ=0.25 in normalised coordinates is a very extreme noise level (25% of the maximum radius), but this is not stated anywhere.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Either: (A) change the axis label to "Gaussian Noise σ (normalised units, max radius = 1.0)"; or (B) convert sigma to pixel-equivalent units in the label. Add a sentence in the paper/notebook explaining the noise model and units so readers can relate Figure 6 to physical imaging scenarios.</p></div>
+</div>
+</div>
+
+<div class="card" id="mn2">
+<div class="card-head" onclick="tog('mn2')">
+  <span class="badge b-minor">MINOR 2</span>
+  <span class="card-title">References section has only 6 entries with one incorrect citation</span>
+  <span class="card-cell">Cell 42</span>
+  <span class="chevron" id="mn2ch">▼</span>
+</div>
+<div class="card-body" id="mn2b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">The notebook cites only 6 references. The Arsigny citation reads "Arsigny et al. (2006). Log-Euclidean metrics for diffusion tensors. Magn. Reson. Med., 56(2)" — this is the diffusion MRI paper, not the SPD/shape analysis paper. The correct reference for Log-Euclidean metrics on SPD matrices is: Arsigny, V., Fillard, P., Pennec, X., & Ayache, N. (2007). Geometric means in a novel vector space structure on SPD matrices. SIAM Journal on Matrix Analysis and Applications, 29(1), 328–347. Also missing: Kuhl & Giardina 1982, Mallat 1989, Bauer 2021 (Ripser), Khotanzad & Hong 1990 (Zernike), Mokhtarian & Mackworth 1992 (CSS).</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>Correct the Arsigny reference to the SIAM JAM 2007 paper. Add all missing foundational references cited in the paper text. A publishable supplementary notebook must reference every method it implements.</p></div>
+</div>
+</div>
+
+<div class="card" id="mn3">
+<div class="card-head" onclick="tog('mn3')">
+  <span class="badge b-minor">MINOR 3</span>
+  <span class="card-title">Ablation in Fig 10 panel F uses truncated descriptor — not principled component removal</span>
+  <span class="card-cell">Cell 38</span>
+  <span class="chevron" id="mn3ch">▼</span>
+</div>
+<div class="card-body" id="mn3b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">The ablation "PCFW only" uses <code>X_amst_attended[:, :50]</code>, "PCFW+Topo" uses <code>[:, :69]</code> etc. — it simply truncates the attended AMST descriptor to fewer dimensions. This is not a real ablation because: (1) the attention weights were computed on the full 97-dim descriptor, not on the truncated subsets; (2) truncation from an attended vector is not the same as removing a component and retraining.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>For a valid ablation, build each configuration as a genuinely separate descriptor: extract only PCFW features for "PCFW only", extract PCFW+Topo for "PCFW+Topo", etc. Then re-run the full 5-fold CV pipeline independently for each configuration. Each ablation configuration must have its own attention fitting and evaluation.</p></div>
+</div>
+</div>
+
+<div class="card" id="mn4">
+<div class="card-head" onclick="tog('mn4')">
+  <span class="badge b-minor">MINOR 4</span>
+  <span class="card-title">AMST descriptor dimension (97) in paper/notebook must match exactly with description</span>
+  <span class="card-cell">Cell 16</span>
+  <span class="chevron" id="mn4ch">▼</span>
+</div>
+<div class="card-body" id="mn4b">
+  <div class="detail-row"><span class="detail-label">What it is</span><span class="detail-val">The notebook states "AMST dim: 97 (PCFW:50 + Topo:19 + SPD:28)". However, when Ripser is properly integrated the topology dimension will change (currently 19 dims from the union-find, may differ with Ripser). The paper text and all tables must state a single consistent descriptor dimension that matches what the code actually produces after all fixes are applied.</span></div>
+  <div class="fix-box"><div class="fix-label">Fix required</div><p>After implementing all fixes, run the descriptor on one sample and print the final dimension. Update the paper text, all tables, Figure 9 axis labels, and the print statement in Cell 16 to reflect the true final dimension. This is a one-line verification but it must be done last after all code changes.</p></div>
+</div>
+</div>
+
+</div>
+
+<div class="ok-box">
+  <h3>✓ Confirmed Correct — No Changes Needed</h3>
+  <ul>
+    <li>Real dataset used throughout (Swedish Leaf, Kaggle) — no synthetic data generation anywhere in the pipeline</li>
+    <li>5-fold stratified cross-validation with <code>random_state=42</code> in the main evaluation (Cell 20) — correct protocol</li>
+    <li>Contour extraction and arc-length resampling (Cell 10) — mathematically sound, standard implementation</li>
+    <li>SVM-RBF classifier with StandardScaler fitted on train fold only and applied to test fold (Cell 20) — no leakage in the classifier step itself</li>
+  </ul>
+</div>
+
+<div class="verdict">
+  <h3>Overall Verdict: Not Ready for Submission in Current State</h3>
+  <p>The six critical issues — particularly the unexposed API key, Ripser being imported but never used, the duplicate topology functions, the single-split confusion matrix, the mislabelled attention mechanism, and the absence of statistical tests — would result in rejection at IEEE TPAMI, Pattern Recognition, IJCV, or any equivalent journal. The data leakage from Fisher weights fitted before CV splits additionally invalidates the reported accuracy numbers. All six critical and five major issues must be resolved and the notebook re-executed end-to-end before submission. Estimated effort: 2–3 days of careful code revision.</p>
+</div>
+</div>
+
+<script>
+function tog(id){
+  const b=document.getElementById(id+'b');
+  const ch=document.getElementById(id+'ch');
+  const open=b.classList.toggle('open');
+  ch.textContent=open?'▲':'▼';
+}
+</script>
