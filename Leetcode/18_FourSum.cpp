@@ -35,8 +35,7 @@ vector<vector<int>> fourSum(vector<int>& nums){    // Time Complexity: O(nlogn+n
                 else{
                     ans.push_back({nums[i], nums[j], nums[p], nums[q]});
                     p++;
-                    q--;
-                    while(p<q && nums[p]==nums[p-1]) p++;
+                    q--;                    while(p<q && nums[p]==nums[p-1]) p++;
                 }
             }
             j++;
