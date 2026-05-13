@@ -1,4 +1,4 @@
-/* 
+  /*    
 Given a non-empty array of integers nums, every element appears twice except for one. 
 Find the single one. You must implement a solution within a linear runtime complexity 
 and use only constant extra space.
@@ -27,7 +27,7 @@ int singleNumber(vector<int>& nums){
     return ans;
 }
 int main(){
-    vector<int>vec={2,2,1,1};          // Time Complexity: O(1)
+    vector<int>vec={2,2,1};          // Time Complexity: O(1)
     singleNumber(vec);
     return 0;
 }

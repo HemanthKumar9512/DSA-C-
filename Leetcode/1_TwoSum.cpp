@@ -70,7 +70,7 @@ vector<int> usingHashing(vector<int> arr, int target){    // Time Complexity: O(
     for(int i=0; i<n; i++){   //O(n)
         int first= arr[i];
         int second= target - first;
-        if(m.find(second)!=m.end()){    // O(1) Unordered map takes constant time
+        if(m.find(second)!=m.end()){    // O(1) Unordered map takes linear time
             ans.push_back(i);
             ans.push_back(m[second]);
             break;
